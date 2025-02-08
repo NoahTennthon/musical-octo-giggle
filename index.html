@@ -16,18 +16,34 @@
 
     <!-- Main Content (Next Page) -->
     <div id="scroll-down">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Affiliates</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Beats</a></li>
-                <li><a href="#">Presets</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+        <div id="navbar">
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    fetch('nav.html')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                            return response.text();
+                        })
+                        .then(data => {
+                            document.getElementById('navbar').innerHTML = data;
+                        })
+                        .catch(error => console.error("Error loading navigation:", error));
+                });
+            </script>
+        </div>
+        <link rel="stylesheet" href="nav.css">
+
+        <div class="custom-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="/4.png" alt="Slide 1"></div>
+                <div class="carousel-slide"><img src="/5.png" alt="Slide 2"></div>
+                <div class="carousel-slide"><img src="/6.png" alt="Slide 3"></div>
+            </div>
+            <button id="prevBtn">❮</button>
+            <button id="nextBtn">❯</button>
+        </div>
         <div class="content">
             <div class="left">
                 <h2>Quick Links / New Releases</h2>
@@ -39,7 +55,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Your Website</p>
+        <p>&copy; 2025 OZNE LAIR</p>
     </footer>
 
     <script type="module" src="main.js"></script>

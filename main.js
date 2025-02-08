@@ -2,6 +2,62 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.carousel-slide'); // Get all slides
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let index = 0;
+const totalSlides = slides.length; // Get total number of slides
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * (100 / totalSlides)}%)`;
+}
+
+// Next Button
+nextBtn.addEventListener('click', () => {
+    index = (index + 1) % totalSlides; // Loop back to first slide
+    updateCarousel();
+});
+
+// Prev Button
+prevBtn.addEventListener('click', () => {
+    index = (index - 1 + totalSlides) % totalSlides; // Loop back to last slide
+    updateCarousel();
+});
+
+// Auto-scroll every 5 seconds
+setInterval(() => {
+    index = (index + 1) % totalSlides;
+    updateCarousel();
+}, 5000);
+
+fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading navbar:", error));
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdown = document.querySelector(".dropbtn");
+      const dropdownContent = document.querySelector(".dropdown-content");
+  
+      dropdown.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevents page jump
+          dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+      });
+  
+      // Close dropdown if clicking outside
+      document.addEventListener("click", function (event) {
+          if (!dropdown.contains(event.target) && !dropdownContent.contains(event.target)) {
+              dropdownContent.style.display = "none";
+          }
+      });
+  });
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
