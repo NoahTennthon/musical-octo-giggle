@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>OZNE LAIR</title>
-        <link rel="stylesheet" href="main.css">
-        <div id="title">OZNE LAIR</div>
-        <link href='https://fonts.googleapis.com/css?family=Bayon&effect=neon' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Bowlby One SC' rel='stylesheet'>
-		<style>
-			h1 { 
-                margin: 0; 
-                font-family: 'Bayon';font-size: 72px;
-        }
-            h2{   
-                margin: 0;
-                font-family: 'Bowlby One SC';font-size: 48px;
-            }
-		</style>
-	</head>
-	<body>
-        <header>
-            <div class="neon-container">
-            <h1 class="neon-text" style="background-color: rgb(25, 11, 105);">WELCOME TO THE OZNE LAIR</h1>
+<head>
+    <meta charset="utf-8">
+    <title>OZNE LAIR</title>
+    <link rel="stylesheet" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Bayon&effect=neon' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bowlby One SC' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Three.js Scene -->
+    <div id="hero">
+        <div id="canvas-container"></div>
+    </div>
+
+    <!-- Main Content (Next Page) -->
+    <div id="scroll-down">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Affiliates</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Beats</a></li>
+                <li><a href="#">Presets</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="left">
+                <h2>Quick Links / New Releases</h2>
             </div>
-        </header>
-	</body>
-    
-    <main>
-        <div id="container3D"></div>   
-  
-        <script type="module" src="/main.js"></script>
+            <div class="right">
+                <h2>Latest Updates</h2>
+            </div>
         </div>
-    </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Website</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+
+</body>
 </html>
