@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AFFILIATES</title>
+    <link rel="stylesheet" href="/public/secondary.css">
+</head>
+
+<link rel="stylesheet" href="/public/nav.css">
+<div id="affiliates">
+    <h1>AFFILIATES</h1>
+    <div id="navbar">
+
+    <script>
+        fetch('/public/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+    </div>
