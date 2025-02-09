@@ -32,7 +32,7 @@ setInterval(() => {
     updateCarousel();
 }, 5000);
 
-fetch("navbar.html")
+fetch("nav.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("navbar-container").innerHTML = data;
