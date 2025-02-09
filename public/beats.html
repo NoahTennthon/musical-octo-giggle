@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GALLERY</title>
-    <link rel="stylesheet" href="secondary.css">
+    <title>BEATS</title>
+    <link rel="stylesheet" href="/public/secondary.css">
 </head>
 
-<link rel="stylesheet" href="nav.css">
-<div id="gallery">
+<link rel="stylesheet" href="/public/nav.css">
+<div id="beats">
+
     <div id="navbar">
 
     <script>
-        fetch('nav.html')
+        fetch('/public/nav.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
             });
     </script>
     </div>
-<div>
-    <h1>GALLERY</h1>
-</div>
+
+    <div>
+        <h1>BEATS</h1>
+    </div>
