@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>THE OZNE BOX</title>
-    <link rel="stylesheet" href="/public/secondary.css">
+    <link rel="stylesheet" href="/secondary.css">
 </head>
-<link rel="stylesheet" href="/public/nav.css">
+<link rel="stylesheet" href="/nav.css">
 <div id="presets">
     <div id="navbar">
     <script>
-        fetch('/public/nav.html')
+        fetch('/nav.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;

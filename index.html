@@ -19,7 +19,7 @@
         <div id="navbar">
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-                    fetch('/public/nav.html')
+                    fetch('/nav.html')
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -33,7 +33,7 @@
                 });
             </script>
         </div>
-        <link rel="stylesheet" href="/public/nav.css">
+        <link rel="stylesheet" href="/nav.css">
 
         <div class="custom-carousel">
             <div class="carousel-track">

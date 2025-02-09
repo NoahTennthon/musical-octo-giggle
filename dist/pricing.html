@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>PRICING</title>
-    <link rel="stylesheet" href="secondary.css">
+    <link rel="stylesheet" href="/secondary.css">
 </head>
 <div id="pricing">
     <h1>PRICING MFS</h1>
     <div id="navbar">
 
     <script>
-        fetch('nav.html')
+        fetch('/nav.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
