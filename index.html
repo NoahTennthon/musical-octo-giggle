@@ -4,61 +4,98 @@
     <meta charset="utf-8">
     <title>OZNE LAIR</title>
     <link rel="stylesheet" href="main.css">
-    <link href='https://fonts.googleapis.com/css?family=Bayon&effect=neon' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Bowlby One SC' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Bayon&effect=neon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Three.js Scene -->
-    <div id="hero">
-        <div id="canvas-container"></div>
+  <!-- Landing Page (Globe Screen) -->
+  <div id="landing">
+      <div id="canvas-container"></div>
+  </div>
+
+  <!-- Main Content Section -->
+<div id="main-content">
+    <!-- Navigation bar is assumed to be loaded already -->
+
+    <!-- Products Section -->
+  <section id="products">
+    <div class="product" style="background-color: #FF5733;">
+        <body>
+            <p> Hello World!</p>
+        </body>
     </div>
-
-    <!-- Main Content (Next Page) -->
-    <div id="scroll-down">
-        <div id="navbar">
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    fetch('/nav.html')
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`HTTP error! Status: ${response.status}`);
-                            }
-                            return response.text();
-                        })
-                        .then(data => {
-                            document.getElementById('navbar').innerHTML = data;
-                        })
-                        .catch(error => console.error("Error loading navigation:", error));
-                });
-            </script>
-        </div>
-        <link rel="stylesheet" href="/nav.css">
-
-        <div class="custom-carousel">
-            <div class="carousel-track">
-                <div class="carousel-slide"><img src="/public/frontpage1.jpg" alt="Slide 1"></div>
-                <div class="carousel-slide"><img src="/public/frontpage2.jpg" alt="Slide 2"></div>
-                <div class="carousel-slide"><img src="/public/frontpage3.jpg" alt="Slide 3"></div>
-            </div>
-            <button id="prevBtn">❮</button>
-            <button id="nextBtn">❯</button>
-        </div>
-        <div class="content">
-            <div class="left">
-                <h2>Quick Links</h2>
-            </div>
-            <div class="right">
-                <h2>Latest Updates</h2>
-            </div>
-        </div>
+    <div class="product" style="background-color: #33FF57;">
+        <body>
+            <p> Hello World!</p>
+        </body>
     </div>
-
+    <div class="product" style="background-color: #3357FF;">
+        <body>
+            <p> Hello World!</p>
+        </body>
+    </div>
+    <div class="product" style="background-color: #F1C40F;">
+        <body>
+            <p> Hello World!</p>
+        </body>
+    </div>
+    <div class="product" style="background-color: #8E44AD;">
+        <body>
+            <p> Hello World!</p>
+        </body>
+    </div>
+  </section>
+    <!-- Quick Links Section -->
+    <section id="quick-links">
+      <h2>Quick Links</h2>
+      <div class="quick-links-container">
+        <a class="quick-link-btn" href="https://example.com" target="_blank">External Resource 1</a>
+        <a class="quick-link-btn" href="/internal-page.html">Internal Page 1</a>
+        <a class="quick-link-btn" href="https://anotherexample.com" target="_blank">External Resource 2</a>
+        <a class="quick-link-btn" href="/another-internal.html">Internal Page 2</a>
+      </div>
+    </section>
+  
+    <!-- Latest Updates Section -->
+    <section id="latest-updates">
+      <h2>Latest Updates</h2>
+      <article>
+        <h3>Update Title 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod...</p>
+        <a href="#">Read more</a>
+      </article>
+      <article>
+        <h3>Update Title 2</h3>
+        <p>Nulla facilisi. Sed dignissim, turpis sit amet scelerisque ultricies, nunc...</p>
+        <a href="#">Read more</a>
+      </article>
+    </section>
+  
+    <!-- Newsletter Sign-Up Section -->
+    <section id="newsletter">
+      <h2>Sign Up for Our Newsletter</h2>
+      <form id="newsletter-form">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  
+    <!-- Gallery Section -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/public/placeholder.jpg" alt="Gallery Placeholder">
+        </div>
+        <!-- You can add more gallery items here -->
+      </div>
+    </section>
+    
     <footer>
-        <p>&copy; 2025 OZNE LAIR</p>
+      <p>&copy; 2025 OZNE LAIR</p>
     </footer>
-
-    <script type="module" src="main.js"></script>
-
+  </div>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

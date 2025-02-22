@@ -1,162 +1,206 @@
-body {
-    background-color: rgb(6, 4, 24);
-}
-
-
-/* Next page */
-#next-page {
-    position: relative;
-    width: 100%;
+/* Fullscreen for landing page */
+#landing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    background: #f4f4f4;
-    transform: translateY(100vh);
-    transition: transform 1s ease-in-out;
-    display: flex;
-    flex-direction: column;
+    background: rgb(6, 4, 24);
+    opacity: 1;
+    transition: opacity 1s ease; /* Fade-out transition */
+    z-index: 10; /* On top initially */
 }
 
-/* Hero section (Three.js scene) */
-#hero {
-    position: relative;
+/* Hide main content initially */
+#main-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Once landing is done, we’ll show the main content (JS will add a class) */
+#main-content.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* For Three.js canvas container */
+#canvas-container {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.custom-carousel {
-    position: relative;
-    width: 80%;
-    height: 300px;
-    margin: auto;
-    overflow: hidden; /* Ensures no extra slides peek through */
-}
-
-.carousel-track {
-    display: flex; /* Ensures images align in a row */
-    width: 300%; /* Each image takes 100%, so for 3 images, it's 300% */
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 33.33%; /* Each slide should take 1/3 of the full width */
-    box-sizing: border-box;
-}
-.carousel-slide img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-}
-
-/* Navigation Buttons */
-#prevBtn, #nextBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-#prevBtn { left: 10px; }
-#nextBtn { right: 10px; }
-
-h1 {
-    color: white;
-    text-align: center;
-}
-
-h2 {
-    color: white;
-    text-align: center;
-    overflow: hidden;
-}
-
-.neon-text {
-    font-size: 4rem;
-    color: #fff;
-    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
-    animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
-    }
-
-    100% {
-        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
-    }
-}
-
-
-
-
-p {
-    font-family: verdana;
-    font-size: 20px;
-    text-align: center;
-}
-
-#container3d canvas {
-    width: 100vw !important;
-    height: 100vh !important;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-
-
-
 }
 
 
-
-nav {
-    position: sticky;
+/* Landing (Globe) Screen */
+#landing {
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(6, 4, 24);
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 10;
+}
+
+/* When the landing fades in */
+#landing.visible {
+    opacity: 1;
+}
+
+/* Main Content: hidden initially */
+#main-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* When main content is revealed */
+#main-content.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Canvas container for Three.js */
+#canvas-container {
     width: 100%;
-    background: black;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 100;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-}
-
-/* Content Layout */
-.content {
-    display: flex;
-    justify-content: space-between;
-    padding: 1px;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.left, .right {
-    width: 45%;
-    background-color: grey;
-    color: white;
-}
+/* Main Content Base Styles */
+#main-content {
+    padding: 20px;
+    background: #f4f4f4;
+    color: #333;
+  }
 
-footer {
+  /* Products Section */
+#products {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #products .product {
+    width: 100%;
+    height: 100px;
+  }
+  
+  /* Section Titles */
+  #main-content h2 {
+    margin-top: 40px;
     text-align: center;
-    padding: 5px;
-    background: black;
+    font-family: 'Bowlby One SC', sans-serif;
+  }
+  
+  /* Quick Links Section */
+  #quick-links .quick-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .quick-link-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007BFF;
     color: white;
-}
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 25px; /* Rounded rectangle */
+    transition: background 0.3s ease;
+  }
+  
+  .quick-link-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Latest Updates Section */
+  #latest-updates article {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  #latest-updates article h3 {
+    margin-top: 0;
+  }
+  
+  #latest-updates article a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  /* Newsletter Section */
+  #newsletter {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  #newsletter-form {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  #newsletter-form input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 250px;
+  }
+  
+  #newsletter-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #newsletter-form button:hover {
+    background: #0056b3;
+  }
+  
+  /* Gallery Section */
+  #gallery .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  #gallery .gallery-item {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  #gallery .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+  }
